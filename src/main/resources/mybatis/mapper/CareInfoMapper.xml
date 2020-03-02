@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.shops.dao.CareInfoMapper">
+
+
+    <select id="getCareById" resultType="com.project.shops.model.CareInfo" parameterType="java.util.List">
+        SELECT t.CARD_NO as cardNo,t.AREA as area from area_info t where 1=1
+        and t.CARD_NO in
+        <foreach collection="list" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <select id="getSelectAll" resultType="com.project.shops.model.CareInfo">
+        SELECT c.name,t.CARD_NO as cardNo,t.AREA as area,substring(c.id,17,1)%2 as sex,c.id as cardCode from area_info
+        t,card c where substr(c.id,1,6)=t.CARD_NO;
+    </select>
+
+</mapper>
