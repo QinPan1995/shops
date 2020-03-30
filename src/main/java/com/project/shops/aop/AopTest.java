@@ -1,6 +1,5 @@
 package com.project.shops.aop;
 
-import com.sun.istack.internal.logging.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
@@ -20,7 +19,7 @@ import java.util.Arrays;
 @Aspect
 @Component
 public class AopTest {
-    private static final Logger logger = Logger.getLogger(AopTest.class);   //日志，我用的log4j
+    //private static final Logger logger = Logger.getLogger(AopTest.class);   //日志，我用的log4j
 
     //配置切点
     @Pointcut("execution(* com.project.shops.controller.*.*(..))")
@@ -31,14 +30,14 @@ public class AopTest {
     public void beforeExcution(JoinPoint joinPoint) {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = requestAttributes.getRequest();
-        logger.info("前置通知开启=====================");
+        /*logger.info("前置通知开启=====================");
 
         logger.info("URL : " + request.getRequestURL().toString());
         logger.info("HTTP_METHOD : " + request.getMethod());
         logger.info("IP : " + request.getRemoteAddr());
         logger.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
         logger.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
-        logger.info("前置通知结束=====================");
+        logger.info("前置通知结束=====================");*/
         System.out.println("进入Controller前");
     }
 
@@ -50,8 +49,8 @@ public class AopTest {
 
     @AfterReturning(value = "execution(* com.project.shops.controller.*.*(..))",returning = "keys")
     public void doAfterReturningAdvice1(JoinPoint joinPoint,Object keys){
-
-        System.out.println("第一个后置返回通知的返回值："+keys);
+        System.out.println("第一个后置返回通知的返回值1："+keys);
+        System.out.println("第一个后置返回通知的返回值2："+keys);
     }
 
 
