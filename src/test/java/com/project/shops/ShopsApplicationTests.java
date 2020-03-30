@@ -10,5 +10,9 @@ class ShopsApplicationTests {
     void contextLoads() {
         System.out.println("hellowrld");
     }
+    @Test
+    public void getSyS(){
+        System.out.println("test");
+    }
 
 }
