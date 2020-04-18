@@ -1,6 +1,6 @@
 package com.project.shops.controller;
 
-import com.project.shops.aop.UploadFileResponse;
+import com.project.shops.aops.UploadFileResponse;
 import com.project.shops.service.FileStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

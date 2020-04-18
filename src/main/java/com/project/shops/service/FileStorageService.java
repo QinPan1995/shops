@@ -1,8 +1,8 @@
 package com.project.shops.service;
 
-import com.project.shops.aop.FileStorageException;
-import com.project.shops.aop.FileStorageProperties;
-import com.project.shops.aop.MyFileNotFoundException;
+import com.project.shops.aops.FileStorageException;
+import com.project.shops.aops.FileStorageProperties;
+import com.project.shops.aops.MyFileNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;

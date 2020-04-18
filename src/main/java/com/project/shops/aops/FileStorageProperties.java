@@ -1,4 +1,4 @@
-package com.project.shops.aop;
+package com.project.shops.aops;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
