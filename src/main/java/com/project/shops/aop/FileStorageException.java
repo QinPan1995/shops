@@ -1,4 +1,4 @@
-package com.project.shops.aops;
+package com.project.shops.aop;
 
 /**
  * @author qinpan

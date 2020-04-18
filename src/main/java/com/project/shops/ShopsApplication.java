@@ -1,6 +1,6 @@
 package com.project.shops;
 
-import com.project.shops.aops.FileStorageProperties;
+import com.project.shops.aop.FileStorageProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

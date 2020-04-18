@@ -1,4 +1,4 @@
-package com.project.shops.aops;
+package com.project.shops.aop;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
