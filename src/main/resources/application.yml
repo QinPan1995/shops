@@ -3,12 +3,18 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.209.142:3306/shops_database?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://192.168.209.144:3306/shops_database?useUnicode=true&characterEncoding=utf8
   thymeleaf:
     cache: false
   #配置需要访问的静态资源目录
   resources:
     static-locations: classpath:/templates/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+  mail:
+    host: smtp.qq.com
+    username: 1919796303@qq.com
+    password: lvletvzbachqgidj
+    default-encoding: utf-8
+
 #  session:
 #    store-type: jdbc
 # redis配置
