@@ -3,7 +3,7 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.209.144:3306/shops_database?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://118.89.63.61:3306/shops_database?useUnicode=true&characterEncoding=utf8
   thymeleaf:
     cache: false
   #配置需要访问的静态资源目录

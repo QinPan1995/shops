@@ -28,7 +28,7 @@ class ShopsApplicationTests {
     @Test
     public void getSyS(){
         System.out.println("test");
-        mailService.sendAttachmentMail("1919796303@qq.com","测试邮件","20200331","D:/image/qqq.pdf");
+        //mailService.sendAttachmentMail("1919796303@qq.com","测试邮件","20200331","D:/image/qqq.pdf");
     }
 
 }

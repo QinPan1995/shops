@@ -1,6 +1,6 @@
 package com.project.shops.utils;
 
-import it.sauronsoftware.base64.Base64;
+import org.apache.commons.codec.binary.Base64;
 
 import java.io.*;
 
@@ -37,8 +37,8 @@ public class Base64Utils {
 	 * @throws Exception
 	 */
 	public static byte[] decode(String base64) throws Exception {
-		return Base64.decode(base64.getBytes());
-	}
+        return Base64.decodeBase64(base64);
+    }
 
 	/** */
 	/**
@@ -51,8 +51,8 @@ public class Base64Utils {
 	 * @throws Exception
 	 */
 	public static String encode(byte[] bytes) throws Exception {
-		return new String(Base64.encode(bytes));
-	}
+        return new String(Base64.encodeBase64(bytes));
+    }
 
 	/** */
 	/**
