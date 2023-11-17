@@ -1,23 +1,14 @@
 spring:
   datasource:
-    username: root
-    password: root
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://118.89.63.61:3306/shops_database?useUnicode=true&characterEncoding=utf8
-  thymeleaf:
-    cache: false
-  #配置需要访问的静态资源目录
-  resources:
-    static-locations: classpath:/templates/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
-  mail:
-    host: smtp.qq.com
-    username: 1919796303@qq.com
-    password: lvletvzbachqgidj
-    default-encoding: utf-8
-
-#  session:
-#    store-type: jdbc
+    url: jdbc:mysql://118.31.171.202:3306/db_spzx?characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: db_spzx
+    password: K2eExSnDR4AYXmAX
+    driver-class-name: com.mysql.cj.jdbc.Driver
 # redis配置
+  redis:
+    password: root
+    port: 6379
+    host: 118.31.171.202
 
 mybatis:
   # 驼峰命名
