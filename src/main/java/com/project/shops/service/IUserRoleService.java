@@ -1,7 +1,7 @@
 package com.project.shops.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.project.shops.model.dao.UserRoleDO;
+import com.project.shops.model.dao.SysUserRoleDO;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.project.shops.model.dao.UserRoleDO;
  * @author luke
  * @since 2023-11-09
  */
-public interface IUserRoleService extends IService<UserRoleDO> {
+public interface IUserRoleService extends IService<SysUserRoleDO> {
 
 }

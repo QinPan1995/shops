@@ -1,7 +1,7 @@
 package com.project.shops.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.project.shops.model.dao.UserDO;
+import com.project.shops.model.dao.SysUserDO;
 import com.project.shops.model.dto.LoginDto;
 import com.project.shops.model.vo.LoginVo;
 
@@ -13,8 +13,11 @@ import com.project.shops.model.vo.LoginVo;
  * @author luke
  * @since 2023-11-09
  */
-public interface IUserService extends IService<UserDO> {
+public interface IUserService extends IService<SysUserDO> {
 
     //用户登录
     LoginVo login(LoginDto loginDto);
+
+    //用户退出
+    void logout(String token);
 }

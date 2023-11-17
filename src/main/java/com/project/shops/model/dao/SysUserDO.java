@@ -15,7 +15,7 @@ import java.util.Date;
  * @since 2023-11-09
  */
 @TableName("sys_user")
-public class UserDO implements Serializable {
+public class SysUserDO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

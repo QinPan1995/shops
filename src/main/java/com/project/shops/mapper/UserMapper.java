@@ -1,7 +1,7 @@
 package com.project.shops.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.project.shops.model.dao.UserDO;
+import com.project.shops.model.dao.SysUserDO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -13,6 +13,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2023-11-09
  */
 @Mapper
-public interface UserMapper extends BaseMapper<UserDO> {
+public interface UserMapper extends BaseMapper<SysUserDO> {
 
 }

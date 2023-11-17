@@ -8,32 +8,23 @@ import java.io.Serializable;
 import java.util.Date;
 /**
  * <p>
- * 用户角色
+ * 角色菜单
  * </p>
  *
  * @author luke
- * @since 2023-11-09
+ * @since 2023-11-17
  */
-@TableName("sys_user_role")
-public class UserRoleDO implements Serializable {
+@TableName("sys_role_menu")
+public class SysRoleMenuDO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键id
-     */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    /**
-     * 角色id
-     */
     private Long roleId;
 
-    /**
-     * 用户id
-     */
-    private Long userId;
+    private Long menuId;
 
     /**
      * 创建时间
@@ -49,6 +40,8 @@ public class UserRoleDO implements Serializable {
      * 删除标记（0:不可用 1:可用）
      */
     private Integer isDeleted;
+
+    private Integer isHalf;
 
     public Long getId() {
         return id;
@@ -66,12 +59,12 @@ public class UserRoleDO implements Serializable {
         this.roleId = roleId;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getMenuId() {
+        return menuId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setMenuId(Long menuId) {
+        this.menuId = menuId;
     }
 
     public Date getCreateTime() {
@@ -98,15 +91,24 @@ public class UserRoleDO implements Serializable {
         this.isDeleted = isDeleted;
     }
 
+    public Integer getIsHalf() {
+        return isHalf;
+    }
+
+    public void setIsHalf(Integer isHalf) {
+        this.isHalf = isHalf;
+    }
+
     @Override
     public String toString() {
-        return "UserRoleDO{" +
+        return "RoleMenuDO{" +
         ", id=" + id +
         ", roleId=" + roleId +
-        ", userId=" + userId +
+        ", menuId=" + menuId +
         ", createTime=" + createTime +
         ", updateTime=" + updateTime +
         ", isDeleted=" + isDeleted +
+        ", isHalf=" + isHalf +
         "}";
     }
 }

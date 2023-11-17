@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.project.shops.exception.GuiguException;
-import com.project.shops.model.dao.UserDO;
+import com.project.shops.model.dao.SysUserDO;
 import com.project.shops.model.dto.LoginDto;
 import com.project.shops.model.vo.LoginVo;
 import com.project.shops.model.vo.common.ResultCodeEnum;
@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
  * @since 2023-11-09
  */
 @Service
-public class IUserServiceImpl extends ServiceImpl<com.project.shops.mapper.UserMapper, UserDO> implements IUserService {
+public class IUserServiceImpl extends ServiceImpl<com.project.shops.mapper.UserMapper, SysUserDO> implements IUserService {
 
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
@@ -56,7 +56,7 @@ public class IUserServiceImpl extends ServiceImpl<com.project.shops.mapper.UserM
         String userName = loginDto.getUserName();
 
         //2 根据用户名查询数据库表 sys_user表
-        UserDO sysUser = selectUserInfoByUserName(userName);
+        SysUserDO sysUser = selectUserInfoByUserName(userName);
 
         //3 如果根据用户名查不到对应信息，用户不存在，返回错误信息
         if (sysUser == null) {
@@ -93,9 +93,15 @@ public class IUserServiceImpl extends ServiceImpl<com.project.shops.mapper.UserM
         return loginVo;
     }
 
-    private UserDO selectUserInfoByUserName(String userName) {
-        LambdaQueryWrapper<UserDO> wrapper = Wrappers.lambdaQuery();
-        wrapper.eq(UserDO::getUsername, userName);
+    private SysUserDO selectUserInfoByUserName(String userName) {
+        LambdaQueryWrapper<SysUserDO> wrapper = Wrappers.lambdaQuery();
+        wrapper.eq(SysUserDO::getUsername, userName);
         return getOne(wrapper);
+    }
+
+    //用户退出
+    @Override
+    public void logout(String token) {
+        redisTemplate.delete("user:login" + token);
     }
 }
