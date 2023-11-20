@@ -16,7 +16,7 @@ mybatis:
     map-underscore-to-camel-case: true
   #config-location: classpath:mybatis/mybatis-config.xml
   # 指定sql映射文件位置
-  mapper-locations: classpath:mybatis/mapper/*.xml
+  mapper-locations: classpath:/mapper/*/*.xml
 #更改端口号为80
 server:
   port: 80

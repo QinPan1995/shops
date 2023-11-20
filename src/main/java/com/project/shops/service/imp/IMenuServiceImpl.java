@@ -8,6 +8,7 @@ import com.project.shops.model.vo.SysMenuVo;
 import com.project.shops.service.IMenuService;
 import com.project.shops.utils.AuthContextUtil;
 import com.project.shops.utils.MenuHelper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -25,6 +26,9 @@ import java.util.List;
 @Service
 public class IMenuServiceImpl extends ServiceImpl<MenuMapper, SysMenuDO> implements IMenuService {
 
+    @Autowired
+    private MenuMapper sysMenuMapper;
+
     //查询用户可以操作菜单
     @Override
     public List<SysMenuVo> findMenusByUserId() {
@@ -35,7 +39,7 @@ public class IMenuServiceImpl extends ServiceImpl<MenuMapper, SysMenuDO> impleme
         //根据userId查询可以操作菜单
         //封装要求数据格式，返回
         List<SysMenuDO> sysMenuList =
-                MenuHelper.buildTree(MenuMapper.findMenusByUserId(userId));
+                MenuHelper.buildTree(sysMenuMapper.findMenusByUserId(userId));
         List<SysMenuVo> sysMenuVos = this.buildMenus(sysMenuList);
         return sysMenuVos;
     }
@@ -43,7 +47,7 @@ public class IMenuServiceImpl extends ServiceImpl<MenuMapper, SysMenuDO> impleme
     // 将List<SysMenu>对象转换成List<SysMenuVo>对象
     private List<SysMenuVo> buildMenus(List<SysMenuDO> menus) {
 
-        List<SysMenuVo> sysMenuVoList = new LinkedList<SysMenuVo>();
+        List<SysMenuVo> sysMenuVoList = new LinkedList<>();
         for (SysMenuDO sysMenu : menus) {
             SysMenuVo sysMenuVo = new SysMenuVo();
             sysMenuVo.setTitle(sysMenu.getTitle());

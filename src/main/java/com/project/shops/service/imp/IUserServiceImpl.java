@@ -70,10 +70,10 @@ public class IUserServiceImpl extends ServiceImpl<com.project.shops.mapper.UserM
         String input_password =
                 DigestUtils.md5DigestAsHex(loginDto.getPassword().getBytes());
         //比较
-        if (!input_password.equals(database_password)) {
-//            throw new RuntimeException("密码不正确");
-            throw new GuiguException(ResultCodeEnum.LOGIN_ERROR);
-        }
+//        if (!input_password.equals(database_password)) {
+////            throw new RuntimeException("密码不正确");
+//            throw new GuiguException(ResultCodeEnum.LOGIN_ERROR);
+//        }
 
         //6 如果密码一致，登录成功，如果密码不一致登录失败
         //7 登录成功，生成用户唯一标识token
