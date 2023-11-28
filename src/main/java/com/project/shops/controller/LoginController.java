@@ -21,6 +21,7 @@ import java.util.List;
  * @author qinpan
  * @create 2020-05-03 16:27
  */
+@CrossOrigin
 @RestController
 public class LoginController {
 
@@ -34,7 +35,7 @@ public class LoginController {
     private ValidateCodeService validateCodeService;
 
     //生成图片验证码
-    @GetMapping(value = "/generateValidateCode")
+    @GetMapping(value = "/captcha")
     public Result<ValidateCodeVo> generateValidateCode() {
         ValidateCodeVo validateCodeVo = validateCodeService.generateValidateCode();
         return Result.build(validateCodeVo,ResultCodeEnum.SUCCESS);
