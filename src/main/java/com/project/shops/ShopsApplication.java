@@ -1,8 +1,11 @@
 package com.project.shops;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//@EnableConfigurationProperties(value = {UserProperties.class, MinioProperties.class})
+@MapperScan(basePackages = {"com.project.shops.mapper"})
 @SpringBootApplication
 public class ShopsApplication{
 

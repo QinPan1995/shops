@@ -104,5 +104,4 @@ public class IUserServiceImpl extends ServiceImpl<com.project.shops.mapper.UserM
     public void logout(String token) {
         redisTemplate.delete("user:login" + token);
     }
-
 }

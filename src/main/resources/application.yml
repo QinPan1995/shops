@@ -10,13 +10,12 @@ spring:
     port: 6379
     host: 118.31.171.202
 
-mybatis:
-  # 驼峰命名
-  configuration:
-    map-underscore-to-camel-case: true
-  #config-location: classpath:mybatis/mybatis-config.xml
-  # 指定sql映射文件位置
-  mapper-locations: classpath:/mapper/*/*.xml
 #更改端口号为80
 server:
-  port: 80
+  port: 3000
+mybatis-plus:
+  # 指定sql映射文件位置
+  mapper-locations: classpath:/mapper/*/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

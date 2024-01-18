@@ -20,4 +20,5 @@ public interface IUserService extends IService<SysUserDO> {
 
     //用户退出
     void logout(String token);
+
 }
